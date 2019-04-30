@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <script src="./js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="whole-container">
+      <header>
+        <h1>Currency Converter</h1>
+      </header>
+      <h3>Base Rate: "{{currencies.base}}"</h3>
+
+      <form>
+        <h4>Convert Currency</h4>
+        <!-- type amount in, run conversion method -->
+        <input type="number" placeholder="Amount" v-model.number="conversionAmount">
+
+        <select class="" v-model="currencyToConvertTo">
+          <option v-for="(value, name) in currencies.rates"  >{{ name }}: {{ value }}</option>
+        </select>
+
+        <button @click="convertTo">Convert!</button>
+
+      </form>
+
+    </div>
+  </body>
+
+
+
+
+
+</html>
