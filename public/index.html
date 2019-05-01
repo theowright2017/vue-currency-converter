@@ -19,11 +19,13 @@
         <!-- type amount in, run conversion method -->
         <input type="number" placeholder="Amount" v-model.number="conversionAmount">
 
-        <select class="" v-model="currencyToConvertTo">
-          <option v-for="(value, name) in currencies.rates"  >{{ name }}: {{ value }}</option>
+        <select class="" v-model="baseCurrency">
+          <option v-for="(value, name) in currencies"  >{{ name }}</option>
         </select>
 
         <button @click="convertTo">Convert!</button>
+
+        <p v-if="result">Your result is {{ result | twoDecimalPlaces }} {{ baseCurrency }}</p>
 
       </form>
 
